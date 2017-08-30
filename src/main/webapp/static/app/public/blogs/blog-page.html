@@ -1,0 +1,67 @@
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-9">
+
+            <div class="thumbnail ">
+                <div class="text-center"><h1><a href="#">{{blog.topic}}</a></h1></div>
+                <img class="img-responsive" ng-src="{{blog.photoUrl}}" >
+                <div class="caption-full">
+                    <h4 class="pull-right"></h4>
+                    <h4><a href="#">{{blog.topic}}</a></h4>
+                    <p id="bdescription" style="font-style: italic">{{blog.description}}</p>
+                    <p id="bcontent">{{blog.content}}</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">{{blog.comments.length}} comments</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        4.0 stars
+                    </p>
+                </div>
+            </div>
+
+            <div class="well">
+
+                <form name="addComment" method="post">
+
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input id="add_comment" type="text" class="form-control" ng-model="newComment"  placeholder="Enter new comment:-)" required>
+                          <span class="input-group-btn">
+                            <button class="btn btn-success" type="button" ng-disabled="addComment.$invalid"
+                                    ng-click="postComment()">Post Comment!</button>
+                          </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+
+                </form>
+
+                <hr>
+
+                <div class="row" ng-repeat="comment in blog.comments | orderBy: date: true ">
+                    <div class="col-md-12">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        {{comment.userNick}}
+                        <span class="pull-right">{{comment.date | date}}</span>
+                        <p>{{comment.comment}}</p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

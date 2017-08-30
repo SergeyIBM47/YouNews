@@ -1,0 +1,85 @@
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>{{category}}: <small>Just select any News.</small></h1>
+        <a href="#/{{category}}/add/new"><button class="btn btn-success">Add new News!</button></a> <button class="btn btn-success" ng-click="subscribe()">Subscribe!</button>
+    </div>
+
+    <!-- Rating List - START -->
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <h1 class="text-center">Today's News posts</h1>
+                <div class="list-group">
+                    <a href="#/news/{{item.id}}" class="list-group-item"  ng-repeat="item in blogs">
+                        <div class="media col-md-3">
+                            <figure class="pull-left">
+                                <img style="height: 230px" ng-src="{{item.photoUrl}}">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading">{{item.topic}}</h4>
+                            <p class="list-group-item-text">
+                                {{item.description}}
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="ratetext">Rate it</div>
+                                    <i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>
+                                    <div class="stars"></div>
+                                    <h2>464  <small>Clicks</small></h2>
+                                    <div id="rate1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .blogicon {
+            font-size: 217px;
+            color:#5CB85C;
+        }
+
+        .ratetext {
+            font-size: 37px;
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+
+        .votes {
+            font-size: 47px;
+            padding-right: 20px;
+            color:#197BB5;
+        }
+
+        a.list-group-item {
+            height: auto;
+            min-height: 250px;
+        }
+
+        a.list-group-item:hover, a.list-group-item:focus {
+            border-left:10px solid #5CB85C;
+            border-right:10px solid #5CB85C;
+        }
+
+        a.list-group-item {
+            border-left:10px solid transparent;
+            border-right:10px solid transparent;
+        }
+    </style>
+
+    <!-- you need to include the shieldui css and js assets in order for the charts to work -->
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+</div>

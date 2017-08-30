@@ -1,0 +1,15 @@
+<div class="container marketing">
+    <div class="page-header text-center">
+        <h1>Projects: <small>Create new opportunity:</small></h1>
+        <a href="#/project/add/new"><button class="btn btn-success">Create new project now!</button></a>
+    </div>
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4 project-item" ng-repeat="item in projectCategoryList">
+            <img class="img-circle" ng-src="{{item.photoUrl}}" width="140" height="140">
+            <h2>{{item.name}}</h2>
+            <p>{{item.description}}</p>
+            <p><a class="btn btn-default" href="#/projects/{{item.name}}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>

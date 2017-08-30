@@ -1,0 +1,133 @@
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1 class="">Project name - {{project.name}}</h1>
+
+            <button type="button" class="btn btn-success" ng-click="joinToProject()">Join to project!</button>
+            <button type="button" class="btn btn-info" ng-click="forwardTo('/project/add/news')">Add Project News</button>
+            <br>
+        </div>
+        <div class="col-sm-2"><img title="profile image"
+                                   class="img-circle img-responsive"
+                                   ng-src="{{project.photoUrl}}">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span>
+                    2.13.2014
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last
+                    seen</strong></span> Yesterday
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real
+                    name</strong></span> Joseph
+                    Doe
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span>
+                    Pet Sitter
+
+                </li>
+            </ul>
+            <div class="panel panel-default">
+                <div class="panel-heading">Insured / Bonded?
+
+                </div>
+                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and
+                    bonded.
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
+
+                </div>
+                <div class="panel-body"><a href="{{project.webSiteUrl}}">
+                    <p style="overflow: hidden;">{{project.webSiteUrl}}</p></a>
+                </div>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
+
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span>
+                    125
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 13
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Posts</strong></span> 37
+                </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong
+                        class="">Followers</strong></span> 78
+                </li>
+            </ul>
+            <div class="panel panel-default">
+                <div class="panel-heading">Social Media</div>
+                <div class="panel-body"><i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i>
+                    <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
+                            class="fa fa-google-plus fa-2x"></i>
+
+                </div>
+            </div>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9" contenteditable="false" style="">
+            <div class="panel panel-default">
+                <div class="panel-heading">Project description</div>
+                <div class="panel-body">
+                    {{project.description}}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Requirment for working in project!</div>
+                <div class="panel-body">
+                    <pre>
+                        {{project.requiredSkills}}
+                    </pre>
+                    <ul>
+                        Necessary Skills:
+                        <li ng-repeat="item in project.necessarySkills">
+                            {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel panel-default target">
+                <div class="panel-heading" contenteditable="false">Project News:</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="item in project.projectNews">
+                          <a style="text-decoration: none" href="#/project/news/{{item.id}}"><div class="thumbnail">
+                                <img alt="300x200" ng-src="{{item.photoUrl}}">
+                                <div class="caption" style="overflow: hidden">
+                                    <h3>
+                                        {{item.topic}}
+                                    </h3>
+                                    <p>
+                                        {{item.description}}
+                                    </p>
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
