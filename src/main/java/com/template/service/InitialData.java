@@ -49,6 +49,7 @@ public class InitialData {
 //        insertProjectData();
         insertBlogData();
 
+        System.out.println("<<< PORT + "+ System.getenv("PORT"));
     }
 
     private void insertUserData() {
